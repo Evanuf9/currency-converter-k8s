@@ -34,7 +34,7 @@ const convertilos = () => {
   }
 
   const total = valorIngresado * valor;
-  resultado.textContent = `${valorIngresado} ${moneda} son ${total.toFixed(2)} pesos`;
+  resultado.textContent = `${valorIngresado} ${moneda} son ${total.toFixed(2)} pesos Argentinos`;
 };
 
 conversion.addEventListener("click", convertilos);
