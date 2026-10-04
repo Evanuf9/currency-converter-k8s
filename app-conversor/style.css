@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: hsl(240, 20%, 93%);
+  color: rgb(16, 15, 15);
+  font-family: Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body.dark-mode {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+.app {
+  width: min(40vw, 300px);
+  padding: 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.converter {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: left;
+}
+
+input,
+select,
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 5px;
+  font-size: 1rem;
+}
+
+input,
+select {
+  flex: 1 1 120px;
+  background: #ffffff;
+  color: #111827;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+#resultado {
+  min-height: 24px;
+  margin-top: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.toggle-control {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-control input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.control {
+  position: absolute;
+  inset: 0;
+  background-color: darkgray;
+  border-radius: 25px;
+  transition: background-color 0.15s ease;
+}
+
+.control::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 40%;
+  background: white;
+  transition: transform 0.15s ease;
+}
+
+.toggle-control input:checked + .control {
+  background-color: rgb(208, 191, 40);
+}
+
+.toggle-control input:checked + .control::after {
+  transform: translateX(26px);
+}
+img{
+  width: 100px;
+}

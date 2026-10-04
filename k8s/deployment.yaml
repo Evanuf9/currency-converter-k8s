@@ -1,0 +1,28 @@
+YAML
+apiVersion: apps/v1
+kind: Deployment
+ 
+metadata:
+ name: currency-converter
+ labels:
+  app: currency-converter
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: currency-converter
+
+  template:
+    metadata:
+      labels:
+        app: currency-converter
+
+    spec:
+      containers:
+      - name: currency-converter
+
+        image: tu-usuario-github/currency-converter:latest
+
+        ports:
+        - containerPort: 80
